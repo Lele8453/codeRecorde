@@ -1,0 +1,17 @@
+<div class="colaboradores-container">
+  <h1><span>|</span> Colaboradores</h1>
+  <div class="colab-list">
+    <div class="colab-card" *ngFor="let c of colaboradores">
+      <img class="colab-avatar" [src]="c.avatar" [alt]="c.nome" />
+      <div class="colab-nome">{{ c.nome }}</div>
+      <div class="colab-links">
+        <a [href]="c.github" target="_blank" title="GitHub">
+          <img src="assets/git1.png" width="62" height="32" alt="GitHub"/>
+        </a>
+        <a [href]="c.linkedin" target="_blank" title="LinkedIn">
+          <img src="assets/linkedin1.png" width="42" height="32" alt="LinkedIn"/>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

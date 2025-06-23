@@ -1,0 +1,43 @@
+<div class="welcome-bg">
+  <div class="welcome-container">
+    <h1><span>|</span> Bem-Vindo ao EduRecode!</h1>
+    <div class="welcome-desc">
+      Para começarmos, conte um pouco sobre você.
+    </div>
+    <form (ngSubmit)="continuar()">
+      <textarea
+        placeholder="Conte algo sobre você..."
+        rows="4"
+        [(ngModel)]="user.bio"
+        name="bio"
+        class="welcome-textarea"
+      ></textarea>
+
+      <div class="welcome-label">Nome de exibição</div>
+      <input
+        class="welcome-input"
+        id="nome"
+        placeholder="Nome"
+        [(ngModel)]="user.nome"
+        name="nome"
+        required
+      />
+
+      <div class="welcome-role">
+        <label class="role-option">
+          <input
+            type="radio"
+            name="tipo"
+            [(ngModel)]="user.role"
+            [value]="'aluno'"
+            checked
+          />
+          <img src="assets/imagem5.png" alt="Aluno" />
+          <div class="role-title">Aluno</div>
+        </label>
+      </div>
+
+      <button class="welcome-btn" type="submit">Continuar</button>
+    </form>
+  </div>
+</div>

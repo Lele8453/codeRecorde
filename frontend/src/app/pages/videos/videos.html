@@ -1,0 +1,21 @@
+<div class="curso-detalhe-wrapper">
+  <h1>Curso</h1>
+  <h2>Aulas do Curso</h2>
+  <div class="videos-grid">
+    <div
+      class="video-card"
+      *ngFor="let video of videos"
+      (click)="irParaAula(video.numero)"
+      tabindex="0"
+      role="button"
+      style="cursor:pointer"
+    >
+      <div class="video-thumb">
+        <img [src]="video.imagem" [alt]="'Vídeo ' + video.numero">
+      </div>
+      <div class="video-label">
+        Aula {{ video.numero }}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,87 @@
+.colaboradores-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.5rem 0 0 0;
+  h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #224f76;
+    margin-bottom: 2rem;
+    span {
+      color: #4f93be;
+      font-size: 2.6rem;
+      margin-right: 8px;
+    }
+  }
+}
+.colab-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem 4.5rem;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+// Cada card normal
+.colab-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 210px;
+  margin-bottom: 2rem;
+}
+
+// Faz o 3º card (Letícia) ocupar uma linha só dele centralizado
+.colab-card:nth-child(3) {
+  flex-basis: 100%;
+  max-width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.colab-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 100px;
+  display: block;
+  margin-bottom: 0.7rem;
+  object-fit: cover;
+  box-shadow: 0 2px 16px #2255771a;
+  background: #fff;
+  user-select: none;
+}
+.colab-nome {
+  font-size: 1.13rem;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  color: #444;
+  text-align: center;
+}
+.colab-links {
+  display: flex;
+  gap: 0.5rem;
+  a img {
+    border-radius: 5px;
+    transition: transform 0.14s;
+    width: 55px;   // <-- aumenta o tamanho dos ícones
+    height: 32px;
+    &:hover { transform: scale(1.13);}
+  }
+}
+
+// Responsivo
+@media (max-width: 700px) {
+  .colab-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .colab-card,
+  .colab-card:nth-child(3) {
+    max-width: 100%;
+    flex-basis: 100%;
+    margin: 0 auto 1.5rem auto;
+  }
+}

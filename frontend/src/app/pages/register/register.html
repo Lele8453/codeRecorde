@@ -1,0 +1,68 @@
+<div class="cadastro-container">
+  <div class="cadastro-card">
+    <h1>Cadastro</h1>
+    <form (ngSubmit)="onSubmit()">
+      <div class="input-row">
+        <mat-form-field appearance="outline" class="half-width">
+          <mat-label>Nome</mat-label>
+          <input matInput placeholder="Insira o nome" [(ngModel)]="user.nome" name="nome" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="half-width">
+          <mat-label>Sobrenome</mat-label>
+          <input matInput placeholder="Sobrenome" [(ngModel)]="user.sobrenome" name="sobrenome" required>
+        </mat-form-field>
+      </div>
+      <div class="input-row">
+        <mat-form-field appearance="outline" class="half-width">
+          <mat-label>Data de Nascimento</mat-label>
+          <input matInput placeholder="dd/MM/yyyy" [(ngModel)]="user.data" name="data">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="half-width">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Seu melhor email" [(ngModel)]="user.email" name="email" type="email" required>
+        </mat-form-field>
+      </div>
+
+      <!-- Só mostra regras se o campo senha for tocado, não vazio e for inválido -->
+      <div class="password-rules"
+        *ngIf="user.senha && user.senha.length > 0 && !senhaValida">
+        <b>Sua senha deve conter:</b><br>
+        <span [class.ok]="senhaRequisitos.tamanho" [class.invalido]="!senhaRequisitos.tamanho">✔</span>
+        Pelo menos 8 caracteres<br>
+        <span [class.ok]="senhaRequisitos.maiuscula" [class.invalido]="!senhaRequisitos.maiuscula">✔</span>
+        Pelo menos 1 letra maiúscula (A-Z)<br>
+        <span [class.ok]="senhaRequisitos.minuscula" [class.invalido]="!senhaRequisitos.minuscula">✔</span>
+        Pelo menos 1 letra minúscula (a-z)<br>
+        <span [class.ok]="senhaRequisitos.numero" [class.invalido]="!senhaRequisitos.numero">✔</span>
+        Pelo menos 1 número (0-9)<br>
+        <span [class.ok]="senhaRequisitos.especial" [class.invalido]="!senhaRequisitos.especial">✔</span>
+        Pelo menos 1 caractere especial (ex: &#64; # $ % &amp; * _ -)<br>
+        <span [class.invalido]="!senhaRequisitos.obvia" [class.ok]="senhaRequisitos.obvia">✖</span>
+        Evite senhas óbvias, como 123456 ou senha123.
+      </div>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Senha</mat-label>
+        <input matInput [type]="hidePassword ? 'password' : 'text'"
+               [(ngModel)]="user.senha" name="senha" required
+               (ngModelChange)="validateSenha()">
+        <button mat-icon-button matSuffix type="button" (click)="hidePassword = !hidePassword">
+          <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Insira novamente</mat-label>
+        <input matInput [type]="hideConfirm ? 'password' : 'text'" [(ngModel)]="user.confirmar" name="confirmar" required>
+        <button mat-icon-button matSuffix type="button" (click)="hideConfirm = !hideConfirm">
+          <mat-icon>{{hideConfirm ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-checkbox class="termos" [(ngModel)]="user.termos" name="termos">
+        Eu aceito os termos e condições...
+      </mat-checkbox>
+      <button mat-raised-button color="primary" class="criar-btn" [disabled]="!user.termos" type="submit">
+        Criar Conta
+      </button>
+    </form>
+  </div>
+</div>

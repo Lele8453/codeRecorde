@@ -1,0 +1,35 @@
+<div class="aula-container">
+  <div class="aula-top">
+    <!-- LADO ESQUERDO: VÍDEO YOUTUBE (iframe embed) -->
+    <div class="aula-video">
+      <iframe 
+        width="100%" 
+        height="320" 
+        [src]="videoUrl" 
+        frameborder="0" 
+        allowfullscreen
+        title="Aula vídeo"></iframe>
+      <!-- Se quiser usar <video> local, troque pelo <video> aqui -->
+    </div>
+    <!-- LADO DIREITO: EDITOR -->
+    <div class="aula-editor">
+      <label>Editor de Código</label>
+      <textarea placeholder="Digite seu código aqui..." [(ngModel)]="codigo"></textarea>
+    </div>
+  </div>
+  
+  <!-- Comentários abaixo -->
+  <div class="aula-comments">
+    <h3>Comentário/Dúvidas</h3>
+    <textarea placeholder="Escreva aqui" [(ngModel)]="novoComentario"></textarea>
+    <button (click)="adicionarComentario()">Enviar</button>
+
+    <div class="comentario-postado" *ngFor="let c of comentarios">
+      <div class="avatar">{{ c.avatar }}</div>
+      <div class="bubble">
+        <span>{{ c.texto }}</span>
+      </div>
+      <div class="autor">{{ c.nome }}</div>
+    </div>
+  </div>
+</div>

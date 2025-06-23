@@ -1,0 +1,39 @@
+<div class="login-container">
+  <div class="login-card">
+    <h1>EduRecode <mat-icon>code</mat-icon></h1>
+
+    <form>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Login</mat-label>
+        <input matInput placeholder="Login" type="text" name="login" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Senha</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" name="senha" />
+        <button mat-icon-button matSuffix type="button" (click)="hide = !hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <div class="forgot-password">
+        <a href="#">Esqueceu a senha?</a>
+      </div>
+
+      <button mat-raised-button color="primary" class="login-btn">Login</button>
+
+      <div class="divider">
+        <hr /><span>ou</span><hr />
+      </div>
+
+      <a
+        mat-stroked-button
+        color="primary"
+        class="register-btn"
+        [routerLink]="['/register']"
+      >
+        Cadastre-se
+      </a>
+    </form>
+  </div>
+</div>

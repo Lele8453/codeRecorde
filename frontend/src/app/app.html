@@ -1,0 +1,16 @@
+<nav class="navbar">
+  <div class="navbar-content">
+    <a [routerLink]="['/home']" class="logo">
+      EduRecode
+      <!-- Se quiser, pode colocar um ícone Angular Material aqui -->
+      <!-- <mat-icon>school</mat-icon> -->
+    </a>
+    <div class="nav-links">
+      <a [routerLink]="['/sobre']" routerLinkActive="active">Sobre</a>
+      <a [routerLink]="['/colaboradores']" routerLinkActive="active">Colaboradores</a>
+      <a [routerLink]="['/nivel']" routerLinkActive="active">Nível</a>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

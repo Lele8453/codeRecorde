@@ -1,0 +1,91 @@
+/* Ajusta para tirar todo espaço branco externo e faz o cabeçalho ficar fixo no topo, ocupando 100% da largura */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  min-height: 100vh;
+  background: #fafbfc;
+  box-sizing: border-box;
+}
+
+/* Cabeçalho */
+.navbar {
+  width: 100vw;
+  min-width: 100vw;
+  position: fixed;          /* FIXO NO TOPO */
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: linear-gradient(90deg, #2c5379 0%, #4f93be 100%);
+  box-shadow: 0 2px 8px 0 rgba(30,60,80,0.06);
+  font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  border: none;
+  height: 62px;             /* Ajuste a altura como quiser */
+  display: flex;
+  align-items: center;
+}
+
+.navbar-content {
+  width: 100vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.7vw;
+}
+
+.logo {
+  font-size: 2.1rem;
+  color: #fff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.18rem;
+  text-shadow: 1px 2px 4px #0a162c2a;
+  letter-spacing: -1.2px;
+}
+
+.logo mat-icon {
+  color: #e6f0fa;
+  font-size: 2.3rem;
+  margin-left: 2px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.2rem;
+}
+
+.nav-links a {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #a4e2ff;
+}
+
+/* Responsivo para telas menores */
+@media (max-width: 800px) {
+  .navbar-content {
+    flex-direction: column;
+    height: auto;
+    gap: 8px;
+    padding: 0.75rem 0.75rem;
+  }
+  .logo {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+  .nav-links {
+    gap: 1rem;
+  }
+}

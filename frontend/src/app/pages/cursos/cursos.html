@@ -1,0 +1,52 @@
+<div class="cursos-wrapper">
+  <h1><span>|</span> Cursos</h1>
+  <div class="cursos-desc">
+    Navegue pelos cursos disponíveis e expanda seu conhecimento!
+  </div>
+
+  <!-- Indicados -->
+  <div class="cursos-section">
+    <h2 class="section-title">🎯 Cursos Indicados para Você</h2>
+    <div class="cursos-list">
+      <div
+        class="curso-card"
+        *ngFor="let curso of cursosIndicados"
+        (click)="irPara(curso.link)"
+        tabindex="0"
+        role="button"
+        aria-pressed="false"
+      >
+        <!-- Caminho com barra: -->
+        <img [src]="curso.img" [alt]="curso.titulo" class="curso-img"/>
+        <div class="curso-info">
+          <div class="curso-titulo">{{ curso.titulo }}</div>
+          <div class="curso-descricao">{{ curso.descricao }}</div>
+          <div class="curso-carga">{{ curso.info }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Outros -->
+  <div class="cursos-section">
+    <h2 class="section-title">📚 Outros Cursos</h2>
+    <div class="cursos-list">
+      <div
+        class="curso-card"
+        *ngFor="let curso of outrosCursos"
+        (click)="irPara(curso.link)"
+        tabindex="0"
+        role="button"
+        aria-pressed="false"
+      >
+        <!-- Caminho com barra: -->
+        <img [src]="curso.img" [alt]="curso.titulo" class="curso-img"/>
+        <div class="curso-info">
+          <div class="curso-titulo">{{ curso.titulo }}</div>
+          <div class="curso-descricao">{{ curso.descricao }}</div>
+          <div class="curso-carga">{{ curso.info }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
